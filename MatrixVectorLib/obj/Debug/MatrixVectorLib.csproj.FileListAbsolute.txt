@@ -1,0 +1,12 @@
+D:\Projects\FindSobstvZn\MatrixVectorLib\bin\Debug\MatrixVectorLib.dll
+D:\Projects\FindSobstvZn\MatrixVectorLib\bin\Debug\MatrixVectorLib.pdb
+D:\Projects\FindSobstvZn\MatrixVectorLib\obj\Debug\MatrixVectorLib.csprojResolveAssemblyReference.cache
+D:\Projects\FindSobstvZn\MatrixVectorLib\obj\Debug\MatrixVectorLib.csproj.CoreCompileInputs.cache
+D:\Projects\FindSobstvZn\MatrixVectorLib\obj\Debug\MatrixVectorLib.dll
+D:\Projects\FindSobstvZn\MatrixVectorLib\obj\Debug\MatrixVectorLib.pdb
+C:\Users\Миша\source\repos\KorrAn\MatrixVectorLib\bin\Debug\MatrixVectorLib.dll
+C:\Users\Миша\source\repos\KorrAn\MatrixVectorLib\bin\Debug\MatrixVectorLib.pdb
+C:\Users\Миша\source\repos\KorrAn\MatrixVectorLib\obj\Debug\MatrixVectorLib.csprojResolveAssemblyReference.cache
+C:\Users\Миша\source\repos\KorrAn\MatrixVectorLib\obj\Debug\MatrixVectorLib.csproj.CoreCompileInputs.cache
+C:\Users\Миша\source\repos\KorrAn\MatrixVectorLib\obj\Debug\MatrixVectorLib.dll
+C:\Users\Миша\source\repos\KorrAn\MatrixVectorLib\obj\Debug\MatrixVectorLib.pdb

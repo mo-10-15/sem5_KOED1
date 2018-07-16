@@ -1,0 +1,9 @@
+C:\Users\Миша\source\repos\KorrAn\KorrAn\obj\Debug\KorrAn.csprojResolveAssemblyReference.cache
+C:\Users\Миша\source\repos\KorrAn\KorrAn\obj\Debug\KorrAn.csproj.CoreCompileInputs.cache
+C:\Users\Миша\source\repos\KorrAn\KorrAn\bin\Debug\KorrAn.exe.config
+C:\Users\Миша\source\repos\KorrAn\KorrAn\bin\Debug\KorrAn.exe
+C:\Users\Миша\source\repos\KorrAn\KorrAn\bin\Debug\KorrAn.pdb
+C:\Users\Миша\source\repos\KorrAn\KorrAn\bin\Debug\MatrixVectorLib.dll
+C:\Users\Миша\source\repos\KorrAn\KorrAn\bin\Debug\MatrixVectorLib.pdb
+C:\Users\Миша\source\repos\KorrAn\KorrAn\obj\Debug\KorrAn.exe
+C:\Users\Миша\source\repos\KorrAn\KorrAn\obj\Debug\KorrAn.pdb
