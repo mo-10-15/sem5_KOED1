@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-//using System.Linq;
 using System.IO;
-//using System.Threading.Tasks;
 
 namespace MatrixVectorLib
 {
@@ -28,6 +25,7 @@ namespace MatrixVectorLib
                 return Math.Sqrt(len);
             }
         }
+
         public Vector(int size = 10)
         {
             arr = new double[size];
@@ -137,7 +135,10 @@ namespace MatrixVectorLib
             return hashCode;
         }
 
-
+        /// <summary>
+        /// Сумма элементов вектора
+        /// </summary>
+        /// <returns></returns>
         public double Sum()
         {
             var res = 0.0;
@@ -145,11 +146,18 @@ namespace MatrixVectorLib
                 res += this[i];
             return res;
         }
+        /// <summary>
+        /// Среднее значение вектора
+        /// </summary>
+        /// <returns></returns>
         public double Middle()
         {
             return Sum() / Count;
         }
-
+        /// <summary>
+        /// Дисперсия в векторе
+        /// </summary>
+        /// <returns></returns>
         public double Dispersion()
         {
             double mid = Middle();

@@ -11,7 +11,8 @@ namespace KorrAn
     class Program
     {
 
-        static int StartIndex = 11, LastIndex = 20;
+        static int StartIndex { get; set; } = 11;//номер начала чтения из таблицы
+        static int LastIndex {get; set;} = 20;//номер конца чтения из экселя
         static List<string> names = new List<string>();
         static Matrix LoadFromExcel(Worksheet ObjWorkSheet)
         {
@@ -89,8 +90,8 @@ namespace KorrAn
 
             TextWriter res = new StreamWriter(@"C:\Users\Миша\source\repos\KorrAn\KorrAn\Result.txt");
 
-            // double alph = 0.05;
-            double t_tabl = 1.9929971;
+            
+            double t_tabl = 1.9929971;// для alph = 0.05;
             var R = matrixs[3];
             Console.WriteLine("Проверка корреляции");
 

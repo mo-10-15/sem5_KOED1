@@ -97,8 +97,6 @@ namespace MatrixVectorLib
             get
             {
                 Matrix copy = new Matrix(this);
-                //Logger.Log("Det matrix\n matrix=\n" + this);// +"\ncopy=\n"+copy);
-
                 for (int i = 0; i < M - 1; i++)//прямой ход метода Гаусса
                 {
                     for (int j = i + 1; j < M; j++)
@@ -118,61 +116,12 @@ namespace MatrixVectorLib
                             copy[j, k] -= mnoj * copy[i, k];
                     }
                 }
-                //Logger.Log("\ncopy after =\n" + copy);
                 double det = 1;
                 for (int i = 0; i < M; i++)
                     det *= copy[i, i];
-                //Logger.Log("Det=" + det);
                 return det;
             }
         }
-        /// <summary>
-        /// Проверка матрицы на корректность. Для генерации
-        /// </summary>
-        /// <returns></returns>
-        bool CorrectMatrix()
-        {
-            //Logger.Log("checking matrix \n" + this);
-            if (Det > 0)
-            {
-                //Logger.Log("Correct check\n");
-                return true;
-            }
-            else
-                return false;
-        }
-
-        ///// <summary>
-        ///// Создание случайной симметричной положительно-определенной матрицы заданного размера
-        ///// </summary>
-        ///// <param name="size">Размер матрицы</param>
-        ///// <returns>Сгенерированная матрица</returns>
-        //public static Matrix CreateRandomMatrix(int size)
-        //{
-        //    Random r = new Random();
-        //    Matrix a = new Matrix(size, size);
-        //    if (size == 1)
-        //        a[0, 0] = r.Next(0, 10) + r.NextDouble();
-
-        //    else
-        //    {
-        //        Matrix b = CreateRandomMatrix(size - 1);
-        //        for (int i = 0; i < b.M; i++)
-        //            for (int j = 0; j < b.N; j++)
-        //                a[i, j] = b[i, j];
-        //        do
-        //        {
-        //            for (int i = 0; i < size - 1; i++)
-        //                a[size - 1, i] = a[i, size - 1] = r.Next(i - 10, 10) + r.NextDouble();
-        //            a[size - 1, size - 1] = r.Next(0, 10) + r.NextDouble();
-        //        } while (!a.CorrectMatrix());
-
-        //    }
-        //    Logger.Log("Created matrix \n size=" + size + "\nmatrix=\n" + a);
-        //    return a;
-
-        //}
-
         /// <summary>
         /// Создание случайной матрицы заданного размера
         /// </summary>
@@ -185,7 +134,7 @@ namespace MatrixVectorLib
             for (int i = 0; i < size; i++)
                 for (int j = 0; j < size; j++)
                     m[i, j] = r.Next(-5, 5) + r.NextDouble();
-            return m.Transpose() * m;
+            return  m;
 
         }
 
@@ -197,7 +146,6 @@ namespace MatrixVectorLib
         public static Matrix CreateRandomSimmetricalMatrix(int size)
         {
             Matrix m = CreateRandomMatrix(size);
-
             return m.Transpose() * m;
 
         }
@@ -229,7 +177,10 @@ namespace MatrixVectorLib
             return res;
         }
 
-
+        /// <summary>
+        /// Печать матрицы с помощью потока
+        /// </summary>
+        /// <param name="tw">поток вывода</param>
         public void PrintMatrix(TextWriter tw)
         {
             tw.WriteAsync("{");
@@ -300,7 +251,10 @@ namespace MatrixVectorLib
             hashCode = hashCode * -1521134295 + M.GetHashCode();
             return hashCode;
         }
-
+        /// <summary>
+        /// Конструктор копирования
+        /// </summary>
+        /// <param name="b"></param>
         public Matrix(Matrix b)
         {
             arr = new double[b.M, b.N];
@@ -308,7 +262,11 @@ namespace MatrixVectorLib
                 for (int j = 0; j < b.N; j++)
                     arr[i, j] = b[i, j];
         }
-
+        /// <summary>
+        /// Создание стандартизованной матрицы
+        /// </summary>
+        /// <param name="Z">Исходная матрица</param>
+        /// <returns></returns>
         public static Matrix CreateNorm(Matrix Z)
         {
             Matrix Res = new Matrix(Z.M, Z.N);
@@ -323,7 +281,11 @@ namespace MatrixVectorLib
             return Res;
         }
 
-
+        /// <summary>
+        /// Создание ковариационной матрицы
+        /// </summary>
+        /// <param name="Z">Исходная матрица</param>
+        /// <returns></returns>
         public static Matrix CreateCovMatrix(Matrix Z)
         {
             var Cov = new Matrix(Z.N, Z.N);
@@ -341,7 +303,11 @@ namespace MatrixVectorLib
                 }
             return Cov;
         }
-
+        /// <summary>
+        /// Создание корреляционной матрицы
+        /// </summary>
+        /// <param name="x"></param>
+        /// <returns></returns>
         public static Matrix CreateCorr(Matrix x)
         {
             Matrix r = new Matrix(x.N, x.N);
@@ -362,7 +328,7 @@ namespace MatrixVectorLib
         public static Matrix operator *(Matrix a, Matrix b)
         {
             if (a.N != b.M)
-                throw new ArgumentException();
+                throw new ArgumentException("Умножение матриц невозможно. Количество столбцов первой не равно кол-ву строк второй");
             Matrix res = new Matrix(a.M, b.N);
             for (int i = 0; i < a.M; i++)
                 for (int j = 0; j < b.N; j++)
